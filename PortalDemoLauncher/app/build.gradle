@@ -41,11 +41,11 @@ bundle {
 
 dependencies {
 implementation project(":api")
-//compileOnly 'com.alipay.android.phone.thirdparty:fastjson-api:1.1.45@jar'
-//// androidsupport
-//compileOnly 'com.alipay.android.phone.thirdparty:androidsupport-api:13.23@jar'
-//
-//provided "com.alipay.android.phone.mobilesdk:framework-api:2.1.1@jar"
+compileOnly 'com.alipay.android.phone.thirdparty:fastjson-api:1.1.45@jar'
+// androidsupport
+compileOnly 'com.alipay.android.phone.thirdparty:androidsupport-api:13.23@jar'
+
+provided "com.alipay.android.phone.mobilesdk:framework-api:2.1.1@jar"
 }
 
 apply plugin: 'com.alipay.apollo.baseline.update'
