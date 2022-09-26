@@ -49,7 +49,7 @@ dependencies {
     implementation 'com.squareup.wire:wire-lite-runtime:1.5.3.4@jar'
 
 manifest "com.antway.bundle:portaldemo:1.0.0-SNAPSHOT:AndroidManifest@xml"
-bundle "com.antway.bundle:portaldemo:1.0.0-SNAPSHOT@jar"
+bundle "com.antway.bundle:portaldemo:1.0.0-SNAPSHOT:raw@jar"
 }
 
 apply plugin: 'com.alipay.apollo.baseline.update'
@@ -58,9 +58,6 @@ mpaascomponents{
 // or set removed = true in mpaaspakcages.json
       excludeDependencies=[
               "com.alipay.android.phone.thirdparty:securityguard-build",
-              'com.alipay.android.phone.thirdparty:androidsupport-build',
-              'com.alipay.android.phone.thirdparty:amap3dmap-build',
               'com.alipay.android.phone.thirdparty:wire-build',
-              'com.alipay.android.phone.wallet:nebulaucsdk-build',
       ]
 }
