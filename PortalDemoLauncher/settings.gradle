@@ -1,0 +1,2 @@
+include ':api', ':portaldemo'
+project(':portaldemo').projectDir = new File('app')

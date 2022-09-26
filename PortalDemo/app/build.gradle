@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.alipay.portal'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        applicationId "com.antway.portal"
+        minSdkVersion 18
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0.0.0"
+        ndk {
+            abiFilters 'arm64-v8a','armeabi-v7a'
+        }
+    }
+    signingConfigs {
+        release {
+//            keyAlias 'alias'
+//            keyPassword '***'
+//            storeFile file('keystore path')
+//            storePassword '***'
+        }
+        debug {
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.debug
+        }
+    }
+
+}
+
+
+portal {
+    allSlinks true
+    mergeAssets true
+}
+
+dependencies {
+
+    implementation 'com.squareup.okio:okio:1.7.0@jar'
+    implementation 'com.squareup.wire:wire-lite-runtime:1.5.3.4@jar'
+
+manifest "com.antway.bundle:portaldemo:1.0.0-SNAPSHOT:AndroidManifest@xml"
+bundle "com.antway.bundle:portaldemo:1.0.0-SNAPSHOT@jar"
+}
+
+apply plugin: 'com.alipay.apollo.baseline.update'
+mpaascomponents{
+// when you want exclude mpaas dependencies ,you can add dependency ga to to excludeDependencies
+// or set removed = true in mpaaspakcages.json
+      excludeDependencies=[
+              "com.alipay.android.phone.thirdparty:securityguard-build",
+              'com.alipay.android.phone.thirdparty:androidsupport-build',
+              'com.alipay.android.phone.thirdparty:amap3dmap-build',
+              'com.alipay.android.phone.thirdparty:wire-build',
+              'com.alipay.android.phone.wallet:nebulaucsdk-build',
+      ]
+}
