@@ -6873,7 +6873,7 @@
 			"remove":false
 		},
 		{
-			"bundleGav":"com.mpaas.security.adapter:security_detect_adapter:1.0.0.220809190956@jar",
+			"bundleGav":"com.mpaas.security.adapter:security_detect_adapter:1.0.0.220927155651@jar",
 			"bundleName":"com-mpaas-securitydetect-adapter-security_detect_adapter",
 			"classifier":[
 				"api",
